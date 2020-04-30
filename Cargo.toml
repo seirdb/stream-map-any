@@ -1,0 +1,18 @@
+[package]
+name = "stream-map-any"
+version = "0.1.0"
+authors = ["seirdb <dries.bossers@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+futures = { version = "0.3", default-features = false }
+rand = "0.7.3"
+
+[dev-dependencies]
+futures = "0.3"
+tokio = { version = "0.2.20", features = ["stream", "macros"] }
+criterion = "0.3"
+
+[[bench]]
+name = "performance"
+harness = false
