@@ -23,7 +23,12 @@ stream-map-any = "0.2"
 
 Merging of 2 streams:
 
-```rust,no_run```
+```rust,no_run
+use futures::channel::mpsc::channel;
+use futures::executor::block_on;
+use futures::stream::{self, StreamExt};
+use stream_map_any::StreamMapAny;
+
 fn main() {
     let int_stream = stream::iter(vec![1; 10]);
     let (mut tx, rx) = channel::<String>(100);
@@ -40,10 +45,10 @@ fn main() {
         loop {
             match merge.next().await {
                 Some((0, val)) => {
-                    let _val: i32 = msg.value().unwrap();
+                    let _val: i32 = val.value().unwrap();
                 }
                 Some((1, val)) => {
-                    let _val: String = msg.value().unwrap();
+                    let _val: String = val.value().unwrap();
                 }
                 Some(_) => panic!("unexpected key"),
                 None => break,
