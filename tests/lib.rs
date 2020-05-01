@@ -15,7 +15,7 @@ fn single_stream() {
         loop {
             match merge.next().await {
                 Some((0, msg)) => {
-                    let val: i32 = msg.get().unwrap();
+                    let val: i32 = msg.value().unwrap();
                     assert_eq!(val, 100);
                 }
                 Some(_) => panic!("unexpected key"),
@@ -38,7 +38,7 @@ fn repeat_stream() {
         for _ in 0u8..100 {
             match merge.next().await {
                 Some((0, msg)) => {
-                    let val: i32 = msg.get().unwrap();
+                    let val: i32 = msg.value().unwrap();
                     count += val;
                 }
                 Some(_) => panic!("unexpected key"),
@@ -69,11 +69,11 @@ fn mixed_stream_types() {
         loop {
             match merge.next().await {
                 Some((0, msg)) => {
-                    let val: i32 = msg.get().unwrap();
+                    let val: i32 = msg.value().unwrap();
                     count += val;
                 }
                 Some((1, msg)) => {
-                    let val: String = msg.get().unwrap();
+                    let val: String = msg.value().unwrap();
                     hello_msg = Some(val);
                 }
                 Some(_) => panic!("unexpected key"),

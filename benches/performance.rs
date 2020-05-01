@@ -17,7 +17,7 @@ fn bench_merge_single_stream(c: &mut Criterion) {
                 for _ in 0u32..100 {
                     match merge.next().await {
                         Some((0, msg)) => {
-                            let val: i32 = msg.get().unwrap();
+                            let val: i32 = msg.value().unwrap();
                             count += val;
                         }
                         Some(_) => panic!("unexpected key"),
@@ -69,12 +69,12 @@ fn bench_merge_two_streams(c: &mut Criterion) {
                     match merge.next().await {
                         Some(_) if count == 50 && other_count == 50 => break,
                         Some((0, msg)) if count != 50 => {
-                            let val: i32 = msg.get().unwrap();
+                            let val: i32 = msg.value().unwrap();
                             count += val;
                         }
                         Some((0, _)) => {}
                         Some((1, msg)) if other_count != 50 => {
-                            let val: u32 = msg.get().unwrap();
+                            let val: u32 = msg.value().unwrap();
                             other_count += val;
                         }
                         Some((1, _)) => {}
