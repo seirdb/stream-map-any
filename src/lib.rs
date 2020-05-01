@@ -1,4 +1,4 @@
-//! Allows merging async Streams of different output type.
+//! Allow merging async Streams of different output type.
 //!
 //! It's very similar to Tokio's [`StreamMap`], except that it doesn't require the streams to have the
 //! same output type.

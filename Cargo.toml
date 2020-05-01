@@ -3,6 +3,12 @@ name = "stream-map-any"
 version = "0.1.0"
 authors = ["seirdb <dries.bossers@gmail.com>"]
 edition = "2018"
+license-file = "LICENSE"
+description = "Allows merging async Streams of different output type"
+homepage = "https://github.com/seirdb/stream-map-any"
+repository = "https://github.com/seirdb/stream-map-any"
+readme = "README.md"
+keywords = ["async", "non-blocking", "futures"]
 
 [dependencies]
 futures = { version = "0.3", default-features = false }
