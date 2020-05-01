@@ -144,7 +144,7 @@ impl StreamMapAnyVariant {
     }
 
     /// Retrieve the containing boxed Any.
-    pub fn as_boxed_any(self: Self) -> Box<dyn Any> {
+    pub fn boxed_any(self: Self) -> Box<dyn Any> {
         self.0
     }
 }
