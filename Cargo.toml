@@ -1,9 +1,11 @@
 [package]
 name = "stream-map-any"
-version = "0.2.0"
+version = "0.2.2"
 authors = ["seirdb <dries.bossers@gmail.com>"]
 edition = "2018"
+license = "MIT"
 license-file = "LICENSE"
+documentation = "https://docs.rs/stream-map-any/0.2.0/stream_map_any/"
 description = "Allows merging async Streams of different output type"
 homepage = "https://github.com/seirdb/stream-map-any"
 repository = "https://github.com/seirdb/stream-map-any"
