@@ -4,7 +4,7 @@ Allows merging async Streams of different output type.
 
 It's very similar to Tokio's `StreamMap`, except that it doesn't require the streams to have the
 same output type.
-This can be usefull when you don't know what type of streams should be combined, acting as a
+This can be useful when you don't know what type of streams should be combined, acting as a
 runtime dynamic select.
 
 ## Not a zero-cost-abstraction
@@ -58,4 +58,10 @@ fn main() {
 }
 ```
 
-[API Docs](https://docs.rs/stream-map-any/0.2.0/stream_map_any/)
+Further info in the [API Docs](https://docs.rs/stream-map-any/0.2.0/stream_map_any/).
+
+## License
+cense
+<sup>
+Licensed under <a href="LICENSE">MIT license</a>.
+</sup>

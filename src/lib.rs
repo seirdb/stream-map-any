@@ -2,7 +2,7 @@
 //!
 //! It's very similar to Tokio's [`StreamMap`], except that it doesn't require the streams to have the
 //! same output type.
-//! This can be usefull when you don't know what type of streams should be combined, acting as a
+//! This can be useful when you don't know what type of streams should be combined, acting as a
 //! runtime dynamic select.
 //!
 //! ## Not a zero-cost-abstraction
