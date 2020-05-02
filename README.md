@@ -61,7 +61,6 @@ fn main() {
 Further info in the [API Docs](https://docs.rs/stream-map-any/0.2.0/stream_map_any/).
 
 ## License
-cense
 <sup>
 Licensed under <a href="LICENSE">MIT license</a>.
 </sup>
